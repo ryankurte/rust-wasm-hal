@@ -14,5 +14,7 @@ logger = ["log"]
 [dependencies]
 embedded-hal = { version = "0.2.3", features = ["unproven"] }
 log = { version = "0.4.8", optional = true }
+libc = "0.2.66"
+panic-abort = "0.3.2"
 
 

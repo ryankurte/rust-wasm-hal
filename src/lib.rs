@@ -26,6 +26,7 @@ pub mod logger;
 
 use crate::error::WasmError;
 use crate::delay::WasmDelay;
+use crate::args::WasmArgs;
 use crate::i2c::WasmI2c;
 use crate::spi::WasmSpi;
 use crate::gpio::{WasmGpio, GpioMode};
@@ -42,6 +43,10 @@ impl Device {
         // TODO: mutable static is not ideal, but at this point we only
         // have one process within the WASM runtime so...
         unsafe { DEVICE.take() }
+    }
+
+    pub fn args(&mut self, argc: u32, _argv: u32) -> WasmArgs {
+        WasmArgs::new(argc as usize)
     }
 
     /// Get the current millisecond tick count from the underlying os

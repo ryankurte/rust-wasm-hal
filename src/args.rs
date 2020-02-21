@@ -51,4 +51,18 @@ impl WasmArgs {
 
         Some(s)
     }
+
+    pub fn get_u32(&mut self, index: usize) -> Option<u32> {
+        let s = match self.get(index) {
+            Some(v) => v,
+            None => return None,
+        };
+
+        let n = match s.parse::<u32>() {
+            Ok(v) => v,
+            Err(_e) => return None,
+        };
+
+        Some(n)
+    }
 }

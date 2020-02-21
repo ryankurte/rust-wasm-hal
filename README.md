@@ -26,12 +26,15 @@ WASM-HAL components:
   - [ ] Displays / rendering
   - [ ] WiFi connection / management
   - [ ] MQTT connection / management
+- [ ] Examples
+  - [x] i2c-detect (untested)
+  - TODO: what else?
 
 
 ## Getting Started
 
 
-You'll need the `wasm-unknown-unknown` rust target installed, as well as `wasm-opt` from [binaryen](https://github.com/WebAssembly/binaryen) to strip debug symbols, check out the [example](https://github.com/ryankurte/rust-esp32-wasm/tree/master/example) to get started.
+You'll need nightly rust (`rustup default nightly`) and the `wasm-unknown-unknown` rust target installed (`rustup target add wasm32-unknown-unknown`), as well as `wasm-opt` from [binaryen](https://github.com/WebAssembly/binaryen) to strip debug symbols, check out the [example](https://github.com/ryankurte/rust-esp32-wasm/tree/master/example) to get started.
 
 - Build with `cargo build --release`
 - Optimize with: `wasm-opt -Oz -o test.wasm --strip-debug --strip-dwarf /media/tmp/wasm32-unknown-unknown/release/YOUR_BINARY.wasm`
