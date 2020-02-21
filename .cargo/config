@@ -1,0 +1,8 @@
+[build]
+# Override default target
+target = "wasm32-unknown-unknown"
+
+# Limit stack size to something sensible
+rustflags = [
+    "-C", "link-arg=-zstack-size=32768",
+]
