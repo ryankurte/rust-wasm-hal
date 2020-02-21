@@ -1,0 +1,18 @@
+[package]
+name = "wasm-hal"
+description = "A WebAssembly HAL for rust-embedded"
+repository = "https://github.com/ryankurte/rust-wasm-hal"
+version = "0.1.0"
+authors = ["ryan <ryan@kurte.nz>"]
+edition = "2018"
+license = "MPL-2.0"
+
+
+[features]
+logger = ["log"]
+
+[dependencies]
+embedded-hal = { version = "0.2.3", features = ["unproven"] }
+log = { version = "0.4.8", optional = true }
+
+
